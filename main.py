@@ -19,7 +19,11 @@ def only_ints(x,y):
   else:
     print("They are both not varible")
 
-only_ints(5,6)
-only_ints("a",6)
-only_ints(5, "a")
-only_ints("a","b")
+def main():
+  only_ints(5,6)
+  only_ints("a",6)
+  only_ints(5, "a")
+  only_ints("a","b")
+
+if __name__ == '__main__':
+  main()
