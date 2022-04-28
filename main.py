@@ -4,36 +4,50 @@ Noah Suplee 2021
 """
 
 
-def onlyInts(x,y):
+def only_ints(*args, log=False):
   '''
-  Logs if arguments are ints
+  Recursively logs if the arguments are integers if not found returns false
   '''
-  if isinstance(x, int) == True and isinstance(y, int) == True:
-    print ("Both variables are integers")
+  nonIntCount = 0
 
-  elif isinstance(x, int) == True and isinstance(y, int) == False:
-    print("The first varible is an integers and the second on isn't")
+  for arg in args:
 
-  elif isinstance(x, int) == False and isinstance(y, int) == True:
-    print("The first varible isn't an integers and the second on is an integer ")
+    if type(arg) is int:
+      pass
 
-  else:
-    print("They are both not varible")
+    if type(arg) is str:
+      nonIntCount+=1
 
+    elif hasattr(arg, '__iter__'):
+      if not only_ints(arg):
+        nonIntCount+=1
 
-def __testOnlyInts():
+    else:
+      nonIntCount+=1
+  
+  if log:
+    log_statements = {
+      nonIntCount == 0 : "all variables are integers",
+      nonIntCount >= 0 : "one or more are not integers",
+      nonIntCount == len(args) : "they are all not integers" 
+    }
+
+    print([case])
+
+  return nonIntCount == 0
+
+def __test_only_ints():
   '''
   tests the only_ints function
   '''
-  demoStrings = ['a', 'b']
-  demoIntegers = [5, 6]
 
-  for argA in zip(demoStrings, demoIntegers):
-    for argB in zip(demoStrings, demoIntegers):
-      onlyInts(argA, argB)
+  for arg_a in ['a', 6]:
+    for arg_b in ['b', 5]:
+      only_ints(arg_a, arg_b)
+      print(arg_a, arg_b)
 
 def main():
-  test()
+  __test_only_ints()
 
 
 if __name__ == '__main__':
