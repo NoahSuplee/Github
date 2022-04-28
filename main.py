@@ -3,6 +3,7 @@ This is simple code for my class
 Noah Suplee 2021
 """
 
+
 def only_ints(x,y):
   '''
   Logs if arguments are ints
@@ -19,11 +20,21 @@ def only_ints(x,y):
   else:
     print("They are both not varible")
 
+
+def __test_only_ints():
+  '''
+  tests the only_ints function
+  '''
+  demoStrings = ['a', 'b']
+  demoIntegers = [5, 6]
+
+  for argA in zip(demoStrings, demoIntegers):
+    for argB in zip(demoStrings, demoIntegers):
+      only_ints(argA, argB)
+
 def main():
-  only_ints(5,6)
-  only_ints("a",6)
-  only_ints(5, "a")
-  only_ints("a","b")
+  test()
+
 
 if __name__ == '__main__':
   main()
