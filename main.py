@@ -4,7 +4,7 @@ Noah Suplee 2021
 """
 
 
-def only_ints(x,y):
+def onlyInts(x,y):
   '''
   Logs if arguments are ints
   '''
@@ -21,7 +21,7 @@ def only_ints(x,y):
     print("They are both not varible")
 
 
-def __test_only_ints():
+def __testOnlyInts():
   '''
   tests the only_ints function
   '''
@@ -30,7 +30,7 @@ def __test_only_ints():
 
   for argA in zip(demoStrings, demoIntegers):
     for argB in zip(demoStrings, demoIntegers):
-      only_ints(argA, argB)
+      onlyInts(argA, argB)
 
 def main():
   test()
